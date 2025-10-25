@@ -10,6 +10,8 @@ from model import Model
 from vertexShaders import *
 from fragmentShaders import *
 
+
+
 width = 960
 height = 540
 
@@ -28,12 +30,12 @@ currFragmentShader = fragment_shader
 
 rend.SetShaders(currVertexShader, currFragmentShader)
 
-skyboxTextures = ["skybox/right.jpg",
-				  "skybox/left.jpg",
-				  "skybox/top.jpg",
-				  "skybox/bottom.jpg",
-				  "skybox/front.jpg",
-				  "skybox/back.jpg"]
+skyboxTextures = ["skybox/right.png",
+				  "skybox/left.png",
+				  "skybox/top.png",
+				  "skybox/bottom.png",
+				  "skybox/front.png",
+				  "skybox/back.png"]
 
 rend.CreateSkybox(skyboxTextures)
 
