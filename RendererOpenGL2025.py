@@ -39,7 +39,7 @@ rend.CreateSkybox(skyboxTextures)
 
 
 faceModel = Model("models/model.obj")
-faceModel.AddTexture("textures/model.bmp")
+faceModel.AddTexture("textures/pignashe.jpeg")
 faceModel.AddTexture("textures/lava_cracks.jpg")
 faceModel.position.z = -5
 
@@ -63,33 +63,58 @@ while isRunning:
 			if event.key == pygame.K_f:
 				rend.ToggleFilledMode()
 
+			# Keys 1-6: Creative shader combinations
 			if event.key == pygame.K_1:
-				currFragmentShader = fragment_shader
-				rend.SetShaders(currVertexShader, currFragmentShader)
-
-			if event.key == pygame.K_2:
-				currFragmentShader = toon_shader
-				rend.SetShaders(currVertexShader, currFragmentShader)
-
-			if event.key == pygame.K_3:
-				currFragmentShader = negative_shader
-				rend.SetShaders(currVertexShader, currFragmentShader)
-
-			if event.key == pygame.K_4:
-				currFragmentShader = magma_shader
-				rend.SetShaders(currVertexShader, currFragmentShader)
-
-
-			if event.key == pygame.K_7:
+				# Chromatic aberration effect
+				currFragmentShader = chromatic_shader
 				currVertexShader = vertex_shader
 				rend.SetShaders(currVertexShader, currFragmentShader)
 
+			if event.key == pygame.K_2:
+				# Psychedelic rainbow colors
+				currFragmentShader = psychedelic_shader
+				currVertexShader = vertex_shader
+				rend.SetShaders(currVertexShader, currFragmentShader)
+
+			if event.key == pygame.K_3:
+				# Glitch effect
+				currFragmentShader = glitch_shader
+				currVertexShader = vertex_shader
+				rend.SetShaders(currVertexShader, currFragmentShader)
+
+			if event.key == pygame.K_4:
+				# Twist deformation
+				currVertexShader = twist_shader
+				currFragmentShader = fragment_shader
+				rend.SetShaders(currVertexShader, currFragmentShader)
+
+			if event.key == pygame.K_5:
+				# Exploding pulse effect
+				currVertexShader = explode_shader
+				currFragmentShader = fragment_shader
+				rend.SetShaders(currVertexShader, currFragmentShader)
+
+			if event.key == pygame.K_6:
+				# Vortex spiral effect
+				currVertexShader = vortex_shader
+				currFragmentShader = fragment_shader
+				rend.SetShaders(currVertexShader, currFragmentShader)
+
+			# Keep old shader bindings for reference
+			if event.key == pygame.K_7:
+				currFragmentShader = toon_shader
+				rend.SetShaders(currVertexShader, currFragmentShader)
+
 			if event.key == pygame.K_8:
-				currVertexShader = fat_shader
+				currFragmentShader = negative_shader
 				rend.SetShaders(currVertexShader, currFragmentShader)
 
 			if event.key == pygame.K_9:
-				currVertexShader = water_shader
+				currFragmentShader = magma_shader
+				rend.SetShaders(currVertexShader, currFragmentShader)
+
+			if event.key == pygame.K_0:
+				currVertexShader = fat_shader
 				rend.SetShaders(currVertexShader, currFragmentShader)
 
 
